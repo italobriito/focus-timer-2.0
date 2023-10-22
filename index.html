@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temporizador estilo pomodoro">
+  <title>Focus Timer 2.0</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js" defer></script>
+
+</head>
+<body>
+  <div id="app">
+    <!--Lightmode / Darkmode-->
+    <button id="toggle-mode">
+      <span class="sr-only">Habilitar ou desabilitar lightmode</span>
+      <i class="ph ph-sun"></i>
+      <i class="ph ph-moon"></i>
+    </button>
+    <!---->
+
+    <div id="leftside">
+      <section id="timer"> 
+        <span id="minutes">25</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+      </section>
+
+      <section id="controls">
+
+        <button 
+        id="pauseButton"
+        data-action="toggleRunning"
+        class="ph ph-pause-circle">
+          <span class="sr-only">Pausar contador</span>
+        </button>
+
+        <button 
+        id="playButton"
+        data-action="toggleRunning"
+        class="ph ph-play-circle">
+          <span class="sr-only">Iniciar contador</span>
+        </button>
+
+        <button 
+        data-action="resetTimer"
+        class="ph ph-stop-circle">
+          <span class="sr-only">Resetar contador</span>
+        </button>
+
+        <button 
+        data-action="addFiveMinutes"
+        class="ph ph-plus-circle">
+          <span class="sr-only">Adicionar 5 minutos</span>
+        </button
+        >
+        <button 
+        data-action="removeFiveMinutes"
+        class="ph ph-minus-circle">
+          <span class="sr-only">Diminuir 5 minutos</span>
+        </button>
+      </section>
+
+    </div>
+
+    <div id="rightside">
+
+      <section id="cards">
+       <div id="forestSound">
+         <button 
+         data-action="playForestSound"
+         class="ph bold ph-tree">
+         <span class="sr-only">Ativar som de floresta</span>
+         </button>
+       </div>
+
+       <div id="rainSound">
+         <button
+          data-action="playRainSound"
+          class="ph ph-cloud-rain">
+          <span class="sr-only">Ativar som de chuva</span>
+         </button>
+       </div>
+
+       <div id="coffeshopSound">
+         <button 
+         data-action="playCoffeShopSound"
+         class="ph ph-storefront">
+          <span class="sr-only">Ativar som de cafeteria</span>
+         </button>
+       </div>
+
+       <div id="fireplaceSound">
+         <button 
+         data-action="playFireplaceSound"
+         class="ph ph-fire">
+          <span class="sr-only">Ativar som de lareira</span>
+         </button>
+       </div>
+
+      </section>
+    </div>
+  </div> 
+</body>
+</html>

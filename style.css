@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --hue:10;
+  --text-color: hsla(240, 6%, 21%, 1);
+  --card-text-color: hsla(240, 6%, 21%, 1);
+  --bg-color: hsl(0, 0%, 100%);
+  --bg-card-color: hsla(240, 9%, 89%, 1);
+  
+  --bg-card-color-selected:hsla(194, 97%, 31%, 1);
+  --text-card-color-selected:hsla(0, 0%, 100%, 1);
+
+  --bg-color-buttonmode: rgb(245, 232, 46);
+  --text-color-buttonmode: hsla(0, 100%, 0%, );
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+/*  Light Mode / Dark Mode   */
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 0;
+
+  color: white;
+  border: none;
+  border-radius: 10px;
+  
+  background-color: var(--bg-color-buttonmode);
+  color: var(--text-color-buttonmode);
+  height: 5rem;
+  width: 4rem;
+}
+
+html.dark {
+  --text-color:  hsla(240, 9%, 89%, 1);
+  --bg-color: hsla(240, 6%, 21%) ;
+}
+
+html:not(.dark) #toggle-mode{
+  background-color:  hsla(240, 6%, 21%, 1);
+  color: hsla(240, 9%, 89%, 1); 
+}
+
+html.dark .ph-moon,
+html:not(.dark) .ph-sun {
+  display: none;
+}
+
+#toggle-mode:hover{
+  scale: 1.1;
+}
+/*-------*/
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+#app{
+  display: inline-flex;
+  padding: 19.6rem 22.6rem 18.8rem 23.3rem;
+  justify-content: center;
+  align-items: center;
+
+  gap: 19.2rem;
+  width: 100vw;
+  height: 100vh; 
+  background-color: var(--bg-color) ;
+}
+
+#timer {
+  display: flex;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+
+  color: var(--text-color)
+}
+
+#controls{
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4.0rem;
+  color: var(--text-color); 
+}
+
+#leftside button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 4.8rem;
+  color: var(--text-color);
+  border-radius: 3rem;
+}
+
+#cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem ;
+  row-gap: 3.2rem; 
+}
+
+#rightside button{
+  width: 13.8rem;
+  height: 15.2rem;
+  flex-shrink: 0;
+
+  font-size: 6.2rem;
+  border-radius: 2.4rem;
+  border:none;
+
+  color:var(--card-text-color);
+  background-color: var(--bg-card-color);
+  cursor: pointer;
+}
+
+#leftside button:hover {
+  scale: 1.1;
+
+  color:var(--text-card-color-selected);
+  background-color: var(--bg-card-color-selected);
+}
+
+#rightside button:hover{
+  scale: 1.1;
+  border: 1px solid var(--bg-card-color-selected);
+}
+
+/* Sound Selected*/
+
+ html.forestSoundOn  #forestSound button{
+  color:var(--text-card-color-selected);
+  background-color: var(--bg-card-color-selected);
+}
+
+html.rainSoundOn  #rainSound button{
+  color:var(--text-card-color-selected);
+  background-color: var(--bg-card-color-selected);
+}
+
+html.coffeShopSoundOn  #coffeshopSound button{
+  color:var(--text-card-color-selected);
+  background-color: var(--bg-card-color-selected);
+}
+
+html.fireplaceSoundOn  #fireplaceSound button{
+  color:var(--text-card-color-selected);
+  background-color: var(--bg-card-color-selected);
+}
+
+/*------*/
+
+#leftside #pauseButton{
+  color:var(--text-card-color-selected);
+  background-color: var(--bg-card-color-selected);
+}
+
+html:not(.running) #leftside #pauseButton {
+  display: none;
+}
+
+html.running #leftside #playButton{
+  display: none
+}
+
+
+@media (min-width: 481px) and (max-width: 768px)  {
+  #app{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #app{
+    gap: 50px;
+  }
+}
+
+
+
+
+
+
+
+
