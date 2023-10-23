@@ -181,7 +181,7 @@ html.running #leftside #playButton{
 }
 
 
-@media (min-width: 481px) and (max-width: 768px)  {
+@media (min-width: 281px) and (max-width: 768px)  {
   #app{
     display: flex;
     flex-direction: column;
