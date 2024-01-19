@@ -23,9 +23,11 @@ export function addFiveMinutes () {
   let minutes = Number(el.minutes.textContent)
   let seconds = Number(el.seconds.textContent)
   
-  if( minutes >= 60){
+  if( minutes > 55){
   return
   }
+
+  
 
   timer.updateDisplay(minutes+5,seconds)  
 }
